@@ -108,7 +108,7 @@ const RecruiterJobPostPage = () => {
         return;
       }
 
-      const response = await fetch("http://localhost:5000/recruiter/jobs", {
+      const response = await fetch("https://urmila-webservice.onrender.com/recruiter/jobs", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

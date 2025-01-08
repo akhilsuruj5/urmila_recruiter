@@ -25,10 +25,10 @@ const RecruiterAllApplicants = () => {
       if (!token) throw new Error('No token found');
 
       const [jobsResponse, applicantsResponse] = await Promise.all([
-        fetch('http://localhost:5000/recruiter/jobs', {
+        fetch('https://urmila-webservice.onrender.com/recruiter/jobs', {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch('http://localhost:5000/recruiter/applications', {
+        fetch('https://urmila-webservice.onrender.com/recruiter/applications', {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -62,7 +62,7 @@ const RecruiterAllApplicants = () => {
         status: selectedStatus,
       }).toString();
 
-      const response = await fetch(`http://localhost:5000/recruiter/applications?${query}`, {
+      const response = await fetch(`https://urmila-webservice.onrender.com/recruiter/applications?${query}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -88,7 +88,7 @@ const RecruiterAllApplicants = () => {
     setError('');
     try {
       const token = localStorage.getItem('rtoken');
-      const response = await fetch(`http://localhost:5000/recruiter/applications/${applicantId}/status`, {
+      const response = await fetch(`https://urmila-webservice.onrender.com/recruiter/applications/${applicantId}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

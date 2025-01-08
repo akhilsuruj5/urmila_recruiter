@@ -28,7 +28,7 @@ export default function RecruiterJobDetailPage() {
       }
 
       try {
-        const jobResponse = await fetch(`http://localhost:5000/recruiter/jobs/${jobId}`, {
+        const jobResponse = await fetch(`https://urmila-webservice.onrender.com/recruiter/jobs/${jobId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const jobData = await jobResponse.json();
@@ -60,7 +60,7 @@ export default function RecruiterJobDetailPage() {
 
     if (window.confirm('Are you sure you want to delete this job?')) {
       try {
-        const response = await fetch(`http://localhost:5000/recruiter/jobs/${jobId}`, {
+        const response = await fetch(`https://urmila-webservice.onrender.com/recruiter/jobs/${jobId}`, {
           method: 'DELETE',
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -91,7 +91,7 @@ export default function RecruiterJobDetailPage() {
 
     try {
       const newState = job.state === 'active' ? 'inactive' : 'active';
-      const response = await fetch(`http://localhost:5000/recruiter/jobs/status/${jobId}`, {
+      const response = await fetch(`https://urmila-webservice.onrender.com/recruiter/jobs/status/${jobId}`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,

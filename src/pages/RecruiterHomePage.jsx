@@ -19,7 +19,7 @@ export default function RecruiterHomePage() {
         return
       }
       try {
-        const jobResponse = await fetch('http://localhost:5000/recruiter/jobs', {
+        const jobResponse = await fetch('https://urmila-webservice.onrender.com/recruiter/jobs', {
           headers: { Authorization: `Bearer ${token}` },
         })
         const jobData = await jobResponse.json()
@@ -30,7 +30,7 @@ export default function RecruiterHomePage() {
           navigate('/login')
         }
 
-        const recruiterResponse = await fetch('http://localhost:5000/recruiter/details', {
+        const recruiterResponse = await fetch('https://urmila-webservice.onrender.com/recruiter/details', {
           headers: { Authorization: `Bearer ${token}` },
         })
         const recruiterData = await recruiterResponse.json()

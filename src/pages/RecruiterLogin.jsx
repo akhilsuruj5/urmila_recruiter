@@ -23,7 +23,7 @@ export default function RecruiterLogin() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/recruiter/login', {
+      const response = await fetch('https://urmila-webservice.onrender.com/recruiter/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),

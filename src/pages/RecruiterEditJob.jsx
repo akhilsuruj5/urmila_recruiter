@@ -49,7 +49,7 @@ const RecruiterEditJob = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`http://localhost:5000/recruiter/jobs/${formData._id}`, formData);
+      const response = await axios.put(`https://urmila-webservice.onrender.com/recruiter/jobs/${formData._id}`, formData);
 
       if (response.status === 200) {
         // Successfully updated
